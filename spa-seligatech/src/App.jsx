@@ -1,11 +1,12 @@
 import './App.css'
+import { GlobaStyled } from './globaStyled.jsx';
 import Home from "./pages/Home/Home.jsx"
 
 function App() {
-  const name = "Cristiano";
 
   return (
     <>
+      <GlobaStyled />
       <Home/>
     </>
   )
