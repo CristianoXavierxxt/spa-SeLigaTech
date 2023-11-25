@@ -18,6 +18,7 @@ export const CardBody = styled.article`
     justify-content: space-between;
     gap: 1rem;
 
+
     h2{
         margin-bottom: 1rem;
     }

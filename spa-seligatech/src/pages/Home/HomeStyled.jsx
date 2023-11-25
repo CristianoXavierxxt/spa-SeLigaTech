@@ -5,6 +5,6 @@ export const HomeBody = styled.section`
     flex-direction: column;
     gap: 1rem;
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     align-items: center;
 `;
