@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import logo from "../../images/novoLogo.jpeg"
 import { Button, Nav, ImagemLogo, InputSpace } from "../Navbar/NavbarStyled.jsx"
 
@@ -15,6 +16,7 @@ export default function Navbar() {
 
                 <Button>Entrar</Button>
             </Nav>
+            <Outlet/>
         </>
     )
 }

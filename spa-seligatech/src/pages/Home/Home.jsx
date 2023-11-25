@@ -4,7 +4,8 @@ import { HomeBody, HomeHeader } from "../Home/HomeStyled.jsx"
 import { getAllPublications, getTopPublication } from "../../services/publicationServices.js"
 import { useState, useEffect } from "react"
 
-export default function home() {
+export default function Home() {
+    
     const [publications, setPublication] = useState([])
     const [topPublication, setTopPublication] = useState({})
 
@@ -23,7 +24,6 @@ export default function home() {
     
     return(
         <>
-            <Navbar/>
             <HomeHeader>
                 { 
                     <Card
