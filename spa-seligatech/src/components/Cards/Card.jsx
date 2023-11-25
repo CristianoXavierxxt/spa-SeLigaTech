@@ -1,7 +1,7 @@
-import { CardContainer, CardBody, CardFooter } from "../Cards/CardStyled.jsx"
+import { CardContainer, CardBody, CardFooter, CardHeader } from "../Cards/CardStyled.jsx"
 import { TextLimit } from "../TextLimit/TextLimit.jsx"
 
-export default function Card( { title, text, avatar, likes, comments } ) {
+export default function Card( { title, text, avatar, likes, comments, top } ) {
     
     return (
         <>
@@ -9,23 +9,28 @@ export default function Card( { title, text, avatar, likes, comments } ) {
 
                 <CardBody>
                     <div>
-                        <h2>{title}</h2>
-                        <TextLimit text={text} limit={150} />
+
+                        <CardHeader top={top?.toString()} >
+                            <h2>{title}</h2>
+                            <TextLimit text={text} limit={150} />
+                        </CardHeader>
+
+                        <CardFooter>
+                            <section>
+                                <i className="bi bi-hand-thumbs-up"></i>
+                                <samp>{likes?.length}</samp>
+                            </section>
+                            <section>
+                                <i className="bi bi-chat"></i>
+                                <samp>{comments?.length}</samp>
+                            </section>
+                    
+                        </CardFooter>
+
                     </div>
+
                     <img src={avatar} alt="imagem" />
                 </CardBody>
-
-                <CardFooter>
-                    <div>
-                        <i className="bi bi-hand-thumbs-up"></i>
-                        <samp>{likes}</samp>
-                    </div>
-                    <div>
-                        <i className="bi bi-chat"></i>
-                        <samp>{comments}</samp>
-                    </div>
-                    
-                </CardFooter>
 
             </CardContainer>
         </>
