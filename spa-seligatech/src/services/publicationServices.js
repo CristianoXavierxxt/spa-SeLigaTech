@@ -12,3 +12,8 @@ export function getTopPublication() {
     const response = axios.get( `${baseUrl}/publication/top` )
     return response
 }
+
+export function searchPublications(title) {
+    const response = axios.get( `${baseUrl}/publication/search?title=${title}` )
+    return response
+}
