@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar/Navbar"
 import Card from "../../components/Cards/Card.jsx"
 import { HomeBody, HomeHeader } from "../Home/HomeStyled.jsx"
 import { getAllPublications, getTopPublication } from "../../services/publicationServices.js"
@@ -10,11 +9,17 @@ export default function Home() {
     const [topPublication, setTopPublication] = useState({})
 
     async function findAllPublications() {
-        const allPublication = await getAllPublications()
-        setPublication(allPublication.data.results)
+        try {
+            const allPublication = await getAllPublications()
+            setPublication(allPublication.data.results)
 
-        const top = await getTopPublication()
-        setTopPublication(top.data.publication)
+            const top = await getTopPublication()
+            setTopPublication(top.data.publication)
+        } catch (err) {
+            console.log(err)
+            setPublication([])
+            setTopPublication({})
+        }
     }
 
 
