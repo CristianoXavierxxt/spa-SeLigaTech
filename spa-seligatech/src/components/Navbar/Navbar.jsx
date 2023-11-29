@@ -1,5 +1,5 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
-import logo from "../../images/novoLogo.jpeg"
+import logo from "../../images/Room.png"
 import { Button, Nav, ImagemLogo, InputSpace, ErrorSpan } from "../Navbar/NavbarStyled.jsx"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
