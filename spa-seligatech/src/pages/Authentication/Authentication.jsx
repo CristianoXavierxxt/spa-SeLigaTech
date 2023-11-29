@@ -2,22 +2,24 @@ import { Input } from "../../components/Inputs/Input.jsx"
 import { AuthContainer, Section } from "./AuthenticationStyled.jsx"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { signinSchema } from "../../schemas/signinSchema.js"
+import { signupSchema } from "../../Schemas/SignupSchema.js"
 
 export function Authentication() {
 
     const { 
         register: registerSignup, 
         handleSubmit: handleSubmitSignup, 
-        reset: resetSignup, formState: { errors: errorsSignup } } = useForm({
-        resolver: zodResolver(signupSchemma)
-    })
+        formState: { errors: errorsSignup } } = useForm({
+            resolver: zodResolver(signupSchema)
+        })
 
     const { 
         register: registerSignin, 
         handleSubmit: handleSubmitSignin, 
-        reset: resetSignin, formState: { errors: errosSignin } } = useForm({
-        resolver: zodResolver(signinSchemma)
-    })
+        formState: { errors: errosSignin } } = useForm({
+            resolver: zodResolver(signinSchema)
+        })
 
     function inHandleSubmit(data) {
         
@@ -43,14 +45,14 @@ export function Authentication() {
                         name="email"
                         register={registerSignin}
                         />
-                        
+                        { errosSignin.email && <ErrorSpan>{ errosSignin.email.message }</ErrorSpan> }
                         <Input 
                         type="password"
                         placeholder="Password"
                         name="password"
                         register={registerSignin}
                         />
-
+                        { errosSignin.password && <ErrorSpan>{ errosSignin.password.message }</ErrorSpan> }
                         <Button type="submit" text="Entrar"></Button>
 
                     </form>
@@ -65,29 +67,32 @@ export function Authentication() {
                         <Input 
                         type="text"
                         placeholder="Nome"
-                        name="nome"
+                        name="name"
                         register={registerSignup}
                         />
+                        { errorsSignup.name && <ErrorSpan>{ errorsSignup.name.message }</ErrorSpan> }
                         <Input 
                         type="text"
                         placeholder="Email"
                         name="email"
                         register={registerSignup}
                         />
-                        
+                        { errorsSignup.email && <ErrorSpan>{ errorsSignup.email.message }</ErrorSpan> }
                         <Input 
                         type="password"
                         placeholder="Senha"
                         name="password"
                         register={registerSignup}
                         />
-                        
+                        { errorsSignup.password && <ErrorSpan>{ errorsSignup.password.message }</ErrorSpan> }
                         <Input 
                         type="password"
                         placeholder="Confirmar senha"
-                        name="password"
+                        name="confirmPassword"
                         register={registerSignup}
                         />
+
+                        { errorsSignup.confirmPassword && <ErrorSpan>{ errorsSignup.confirmPassword.message }</ErrorSpan> }
 
                         <Button type="submit" text="Cadastrar"></Button>
 
