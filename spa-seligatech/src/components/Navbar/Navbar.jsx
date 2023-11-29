@@ -1,6 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import logo from "../../images/Room.png"
-import { Button, Nav, ImagemLogo, InputSpace, ErrorSpan } from "../Navbar/NavbarStyled.jsx"
+import { Button } from "../Button/Button.jsx"
+import { Nav, ImagemLogo, InputSpace, ErrorSpan } from "../Navbar/NavbarStyled.jsx"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -26,6 +27,10 @@ export default function Navbar() {
         const { title } = data
         navigate(`/search/${title}`)
         reset()
+    }
+
+    function goAuth(){
+        navigate("/auth")
     }
 
 
@@ -54,8 +59,12 @@ export default function Navbar() {
                     <ImagemLogo src={logo} alt="Logo do SeLigaTech" />
 
                 </Link>
+                
+                <Link to="/auth">
 
-                <Button>Entrar</Button>
+                    <Button type="button" text="Entrar"></Button>
+                    
+                </Link>
 
             </Nav>
 

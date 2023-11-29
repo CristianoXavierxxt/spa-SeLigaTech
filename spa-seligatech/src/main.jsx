@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import Home from "./pages/Home/Home.jsx"
 import { Search } from './pages/Search/Search.jsx'
 import ErrorPage from './pages/NotFoudRouter/NotFoundRouter.jsx'
+import { Authentication } from './pages/Authentication/Authentication.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,13 @@ const router = createBrowserRouter([
         element: <Search/>
       }
     ]
+  },
+  {
+    path: "/auth",
+    element: <Authentication/>,
+    
   }
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
