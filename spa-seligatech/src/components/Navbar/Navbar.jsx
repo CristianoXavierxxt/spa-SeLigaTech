@@ -1,23 +1,16 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import logo from "../../images/Room.png"
-import { Button, Nav, ImagemLogo, InputSpace, ErrorSpan } from "../Navbar/NavbarStyled.jsx"
+import { Button } from "../Button/Button.jsx"
+import { Nav, ImagemLogo, InputSpace, ErrorSpan } from "../Navbar/NavbarStyled.jsx"
 import { useForm } from "react-hook-form"
-import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { searchSchema } from "../../Schemas/SerachSchema.js"
 
-
-
-const searchSchemma = z.object({
-    title: z.string()
-    .nonempty( { message:"A pesquisa não pode ser vazia" } )
-    .refine( value => !/^\s*$/.test(value), 
-    { message:"A pesquisa não ter apenas espaço" })
-})
 
 export default function Navbar() {
 
     const { register, handleSubmit, reset, formState: {errors} } = useForm({
-        resolver: zodResolver(searchSchemma)
+        resolver: zodResolver(searchSchema)
     })
 
     const navigate = useNavigate()
@@ -26,6 +19,10 @@ export default function Navbar() {
         const { title } = data
         navigate(`/search/${title}`)
         reset()
+    }
+
+    function goAuth(){
+        navigate("/auth")
     }
 
 
@@ -54,8 +51,12 @@ export default function Navbar() {
                     <ImagemLogo src={logo} alt="Logo do SeLigaTech" />
 
                 </Link>
+                
+                <Link to="/auth">
 
-                <Button>Entrar</Button>
+                    <Button type="button" text="Entrar"></Button>
+
+                </Link>
 
             </Nav>
 
