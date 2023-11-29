@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { signinSchema } from "../../schemas/signinSchema.js"
 import { signupSchema } from "../../Schemas/SignupSchema.js"
+import { Button } from "../../components/Button/Button.jsx"
+import { ErrorSpan } from "../../components/Navbar/NavbarStyled.jsx"
+import { signup } from "../../services/userServices.js"
 
 export function Authentication() {
 
@@ -25,8 +28,12 @@ export function Authentication() {
         
     }
 
-    function upHandleSubmit(data) {
-        
+    async function upHandleSubmit(data) {
+        try {
+            const response = await signup(data)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
 

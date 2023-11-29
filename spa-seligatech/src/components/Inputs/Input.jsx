@@ -4,7 +4,7 @@ export function Input( { type, placeholder, name, register } ){
 
     return (
         <>
-            <InputSpace type={type} placeholder={placeholder} {...register(name) }></InputSpace>
+            <InputSpace type={type} placeholder={placeholder} { ...register(name) }></InputSpace>
         </>
     )
 }
