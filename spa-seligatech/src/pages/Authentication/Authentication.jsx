@@ -6,7 +6,9 @@ import { signinSchema } from "../../schemas/signinSchema.js"
 import { signupSchema } from "../../Schemas/SignupSchema.js"
 import { Button } from "../../components/Button/Button.jsx"
 import { ErrorSpan } from "../../components/Navbar/NavbarStyled.jsx"
-import { signup } from "../../services/userServices.js"
+import { signin, signup } from "../../services/userServices.js"
+import Cookies from "js-cookie"
+import { useNavigate } from "react-router-dom"
 
 export function Authentication() {
 
@@ -15,22 +17,32 @@ export function Authentication() {
         handleSubmit: handleSubmitSignup, 
         formState: { errors: errorsSignup } } = useForm({
             resolver: zodResolver(signupSchema)
-        })
+    })
 
     const { 
         register: registerSignin, 
         handleSubmit: handleSubmitSignin, 
         formState: { errors: errosSignin } } = useForm({
             resolver: zodResolver(signinSchema)
-        })
+    })
 
-    function inHandleSubmit(data) {
-        
+    const navigate = useNavigate()    
+
+    async function inHandleSubmit(data) {
+        try {
+            const response = await signin(data)
+            Cookies.set( "token", response.data, { expires: 1 } )
+            navigate("/")
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     async function upHandleSubmit(data) {
         try {
             const response = await signup(data)
+            Cookies.set( "token", response.data, { expires: 1 } )
+            navigate("/")
         } catch (err) {
             console.log(err)
         }
