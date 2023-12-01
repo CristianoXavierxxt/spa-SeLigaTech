@@ -2,7 +2,7 @@ import { CardContainer, CardBody, CardFooter, CardHeader } from "../Cards/CardSt
 import { TextLimit } from "../TextLimit/TextLimit.jsx"
 
 export default function Card( { title, text, avatar, likes, comments, top } ) {
-    
+
     return (
         <>
             <CardContainer>

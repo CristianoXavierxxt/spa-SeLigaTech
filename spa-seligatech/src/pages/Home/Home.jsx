@@ -44,14 +44,18 @@ export default function Home() {
             </HomeHeader>   
             <HomeBody>
                 { 
-                    publications.map( ( item )=> <Card 
-                        key = {item.id}
-                        title = {item.title}
-                        text = {item.text}
-                        image = {item.avatar}
-                        likes = {item.likes}
-                        comments = {item.comments}
-                    /> )
+                    publications.map( ( item )=> {
+                        return (
+                            <Card 
+                                key = {item.id}
+                                title = {item.title}
+                                text = {item.text}
+                                image = {item.avatar}
+                                likes = {item.likes}
+                                comments = {item.comments}
+                            /> 
+                        )
+                    })
                 }
             </HomeBody>
         </>

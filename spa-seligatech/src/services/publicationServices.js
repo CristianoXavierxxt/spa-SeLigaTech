@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const baseUrl = "http://localhost:3000"
 
@@ -15,5 +16,14 @@ export function getTopPublication() {
 
 export function searchPublications(title) {
     const response = axios.get( `${baseUrl}/publication/search?title=${title}` )
+    return response
+}
+
+export function getAllPublicationsByUser() {
+    const response = axios.get( `${baseUrl}/publication/publicationByUser`, {
+        headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`
+        }
+    } )
     return response
 }

@@ -14,7 +14,6 @@ export function Search() {
         try {
             const allPublication = await searchPublications(title)
             setPublication(allPublication.data.results)
-            console.log(allPublication)
         } catch (err) {
             console.log(err)
             setPublication([])
@@ -45,14 +44,16 @@ export function Search() {
 
                 <SearchPubli>
                     { 
-                        publications.map( ( item )=> <Card 
-                            key = {item.id}
-                            title = {item.title}
-                            text = {item.text}
-                            image = {item.avatar}
-                            likes = {item.likes}
-                            comments = {item.comments}
-                        /> )
+                        publications.map( ( item )=> 
+                            <Card 
+                                key = {item.id}
+                                title = {item.title}
+                                text = {item.text}
+                                image = {item.avatar}
+                                likes = {item.likes}
+                                comments = {item.comments}
+                            /> 
+                        )
                     }
                 </SearchPubli>
 
