@@ -71,23 +71,32 @@ export default function Navbar() {
                     <ImagemLogo src={logo} alt="Logo do SeLigaTech" />
 
                 </Link>
-                {user ? 
-                    (
-                        <UserLoggedSpace>
-                            <Link to="/profile" style={ { textDecoration: "none" } }>
-                                <h2>{user.name}</h2>
+                <div>
+                    <Link to="/career">
+
+                        <Button type="button" text="Carreiras"></Button>
+
+                    </Link>
+
+                    {user ? 
+                        (
+                            <UserLoggedSpace>
+                                <Link to="/profile" style={ { textDecoration: "none" } }>
+                                    <h2>{user.name}</h2>
+                                </Link>
+                                <i className="bi bi-box-arrow-right" onClick={signout}></i>
+                            </UserLoggedSpace>
+                        ) :
+                        (
+                            <Link to="/auth">
+
+                                <Button type="button" text="Entrar"></Button>
+
                             </Link>
-                            <i className="bi bi-box-arrow-right" onClick={signout}></i>
-                        </UserLoggedSpace>
-                    ) :
-                    (
-                        <Link to="/auth">
-
-                            <Button type="button" text="Entrar"></Button>
-
-                        </Link>
-                    ) 
-                }
+                        ) 
+                    }
+                </div>
+                
 
             </Nav>
 

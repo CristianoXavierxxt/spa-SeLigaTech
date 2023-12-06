@@ -14,6 +14,7 @@ export const ButtonSpace = styled.button`
     font-weight: 500;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+    margin: 0.2rem;
     
     &:hover {
         background-color: #00b894;

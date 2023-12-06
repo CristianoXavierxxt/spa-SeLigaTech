@@ -8,7 +8,8 @@ export const Nav = styled.nav`
     padding: 1rem;
     background-color: #bdc3c7;
     z-index: 1;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 `;
 
 export const ImagemLogo = styled.img`
