@@ -11,6 +11,7 @@ import { Profile } from './pages/Profile/Profile.jsx'
 import UserProvider from './Context/UserContext.jsx'
 import Careers from './pages/Careers/Careers.jsx'
 import Career1 from './pages/Careers/Career1/Career1.jsx'
+import { CreatePublication } from './pages/CreatePublication/CreatePublication.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/career1",
         element: <Career1/>,
+      },
+      {
+        path: "/create",
+        element: <CreatePublication/>,
       }
     ]
   },

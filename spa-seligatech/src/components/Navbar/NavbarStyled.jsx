@@ -101,3 +101,8 @@ export const UserLoggedSpace = styled.div`
         color: #043546;
     }
 `;
+
+export const NavButtons = styled.div`
+    display: flex;
+    flex-direction: row;
+`

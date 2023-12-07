@@ -1,7 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import logo from "../../images/Room.png"
 import { Button } from "../Button/Button.jsx"
-import { Nav, ImagemLogo, InputSpace, ErrorSpan, UserLoggedSpace } from "../Navbar/NavbarStyled.jsx"
+import { Nav, ImagemLogo, InputSpace, ErrorSpan, UserLoggedSpace, NavButtons } from "../Navbar/NavbarStyled.jsx"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { searchSchema } from "../../Schemas/SerachSchema.js"
@@ -71,7 +71,7 @@ export default function Navbar() {
                     <ImagemLogo src={logo} alt="Logo do SeLigaTech" />
 
                 </Link>
-                <div>
+                <NavButtons>
                     <Link to="/career">
 
                         <Button type="button" text="Carreiras"></Button>
@@ -95,7 +95,7 @@ export default function Navbar() {
                             </Link>
                         ) 
                     }
-                </div>
+                </NavButtons>
                 
 
             </Nav>

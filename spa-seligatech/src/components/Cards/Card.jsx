@@ -1,7 +1,7 @@
 import { CardContainer, CardBody, CardFooter, CardHeader } from "../Cards/CardStyled.jsx"
 import { TextLimit } from "../TextLimit/TextLimit.jsx"
 
-export default function Card( { title, text, avatar, likes, comments, top } ) {
+export default function Card( { title, text, image, likes, comments, top }, ) {
 
     return (
         <>
@@ -12,7 +12,7 @@ export default function Card( { title, text, avatar, likes, comments, top } ) {
 
                         <CardHeader top={top?.toString()} >
                             <h2>{title}</h2>
-                            <TextLimit text={text} limit={150} />
+                            <TextLimit text={text} limit={30} />
                         </CardHeader>
 
                         <CardFooter>
@@ -29,7 +29,7 @@ export default function Card( { title, text, avatar, likes, comments, top } ) {
 
                     </div>
 
-                    <img src={avatar} alt="imagem" />
+                    <img src={image} alt="imagem" />
                 </CardBody>
 
             </CardContainer>

@@ -27,3 +27,14 @@ export function getAllPublicationsByUser() {
     } )
     return response
 }
+
+export function createPublication(data){
+    const body = {...data}
+    const response = axios.post(`${baseUrl}/publication/create`, body, { 
+        headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`
+        }
+    })
+
+    return response
+}
