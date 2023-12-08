@@ -1,7 +1,7 @@
 import { CardContainer, CardBody, CardFooter, CardHeader } from "../Cards/CardStyled.jsx"
 import { TextLimit } from "../TextLimit/TextLimit.jsx"
 
-export default function Card( { title, text, image, likes, comments, top }, ) {
+export default function Card( { id, title, text, image, likes, comments, top }, ) {
 
     return (
         <>

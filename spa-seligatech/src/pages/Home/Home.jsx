@@ -13,11 +13,19 @@ export default function Home() {
             const allPublication = await getAllPublications()
             setPublication(allPublication.data.results)
 
-            const top = await getTopPublication()
-            setTopPublication(top.data.publication)
         } catch (err) {
             console.log(err)
             setPublication([])
+        }
+    }
+
+    async function findTopPublication() {
+        try {
+            const top = await getTopPublication()
+            setTopPublication(top.data.publication)
+            
+        } catch (err) {
+            console.log(err)
             setTopPublication({})
         }
     }
@@ -25,6 +33,10 @@ export default function Home() {
 
     useEffect( ()=> {
         findAllPublications()
+    }, [] )
+
+    useEffect( () => {
+        findTopPublication()
     }, [] )
     
     return(
@@ -34,6 +46,7 @@ export default function Home() {
                     <Card
                         top = {true} 
                         key = {topPublication.id}
+                        id = {topPublication.id}
                         title = {topPublication.title}
                         text = {topPublication.text}
                         image = {topPublication.avatar}
@@ -48,6 +61,7 @@ export default function Home() {
                         return (
                             <Card 
                                 key = {item.id}
+                                id = {item.id}
                                 title = {item.title}
                                 text = {item.text}
                                 image = {item.avatar}

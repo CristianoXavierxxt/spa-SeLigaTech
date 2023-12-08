@@ -69,6 +69,7 @@ export function Profile() {
                             return (
                                 <Card
                                     key = {item.id}
+                                    id = {item.id}
                                     title = {item.title}
                                     text = {item.text}
                                     image = {item.avatar}
