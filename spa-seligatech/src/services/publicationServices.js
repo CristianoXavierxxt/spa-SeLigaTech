@@ -38,3 +38,24 @@ export function createPublication(data){
 
     return response
 }
+
+export function addRemoveLike(data){
+
+    const response = axios.patch(`${baseUrl}/publication/like/${data}`, {}, { 
+        headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`
+        }
+    })
+
+    return response
+}
+
+export function findByIdPublication(data){
+    const response = axios.get(`${baseUrl}/publication/findById/${data}`, { 
+        headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`
+        }
+    })
+
+    return response
+}

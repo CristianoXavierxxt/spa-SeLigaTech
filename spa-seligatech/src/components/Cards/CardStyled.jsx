@@ -17,35 +17,48 @@ export const CardBody = styled.article`
     height: 100%;
     width: 100%;
 
+
     div{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 1rem;
         width: 100%;
+
+        div{
+            width: 50%;
+            flex-direction: row;
+
+            p{
+                cursor: pointer;
+
+                &:hover{
+                text-decoration: underline;
+                }
+            }
+        }
     }
 
+
+    
     h2{
         margin-bottom: 1rem;
     }
 
-    img {
-        width: 15%;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 50%;
-    }
 `;
 
 export const CardFooter = styled.article`
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    border-bottom: solid 1px;
+    margin: 1rem 1rem  0rem 0rem;
 
     section{
         display: flex;
         align-items: center;
-        gap: 0.1rem;
+        gap: 0.4rem;
+        margin-bottom: 0.5rem;
     }
 `;
 
@@ -61,3 +74,20 @@ export const CardHeader = styled.article`
         font-size: ${(props) => (props.top ? "3rem" : "1.5rem") };
     }
 `;
+
+export const Section = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    border-left: solid 1px;
+
+    img {
+            height: 60%;
+            width: 70%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+`;
+

@@ -46,7 +46,7 @@ export default function Home() {
                     <Card
                         top = {true} 
                         key = {topPublication.id}
-                        id = {topPublication.id}
+                        id= {topPublication.id}
                         title = {topPublication.title}
                         text = {topPublication.text}
                         image = {topPublication.avatar}

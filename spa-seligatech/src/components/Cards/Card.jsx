@@ -1,7 +1,32 @@
-import { CardContainer, CardBody, CardFooter, CardHeader } from "../Cards/CardStyled.jsx"
+import { useEffect, useState } from "react"
+import { addRemoveLike } from "../../services/publicationServices.js"
+import { CardContainer, CardBody, CardFooter, CardHeader, Section } from "../Cards/CardStyled.jsx"
 import { TextLimit } from "../TextLimit/TextLimit.jsx"
+import { Link } from "react-router-dom"
 
-export default function Card( { id, title, text, image, likes, comments, top }, ) {
+export default function Card( { id, title, text, image, likes, comments, top } ) {
+
+    const [reloadPage, setReloadPage] = useState(false);
+
+    async function addLike(){
+        try {
+            await addRemoveLike(id)
+            setReloadPage(true);
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    function handleLikeClick() {
+        addLike();
+    }
+
+    useEffect(() => {
+        if (reloadPage) {
+          window.location.reload();
+        }
+      }, [reloadPage]);
 
     return (
         <>
@@ -16,6 +41,7 @@ export default function Card( { id, title, text, image, likes, comments, top }, 
                         </CardHeader>
 
                         <CardFooter>
+
                             <section>
                                 <i className="bi bi-hand-thumbs-up"></i>
                                 <samp>{likes?.length}</samp>
@@ -27,9 +53,23 @@ export default function Card( { id, title, text, image, likes, comments, top }, 
                     
                         </CardFooter>
 
+                        <div>
+                            <p onClick={handleLikeClick}>Like</p>
+                            <Link to={`/comment/${id}`}>
+                                <p>Responder</p>
+                            </Link>
+                            
+                        </div>
+                    
                     </div>
 
-                    <img src={image} alt="imagem" />
+                    <Section>
+                        <img src={image} alt="imagem" />
+                        <p>username</p>
+                        <p>Data</p>
+
+                    </Section>
+
                 </CardBody>
 
             </CardContainer>

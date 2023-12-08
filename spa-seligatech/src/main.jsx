@@ -12,6 +12,7 @@ import UserProvider from './Context/UserContext.jsx'
 import Careers from './pages/Careers/Careers.jsx'
 import Career1 from './pages/Careers/Career1/Career1.jsx'
 import { CreatePublication } from './pages/CreatePublication/CreatePublication.jsx'
+import { Comments } from './pages/Comments/Comments.jsx'
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/create",
         element: <CreatePublication/>,
+      },
+      {
+        path: "/comment/:id",
+        element: <Comments/>,
       }
     ]
   },
