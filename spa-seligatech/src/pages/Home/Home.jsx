@@ -33,9 +33,6 @@ export default function Home() {
 
     useEffect( ()=> {
         findAllPublications()
-    }, [] )
-
-    useEffect( () => {
         findTopPublication()
     }, [] )
     
