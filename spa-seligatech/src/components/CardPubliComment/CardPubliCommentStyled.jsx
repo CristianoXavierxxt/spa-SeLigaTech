@@ -6,10 +6,15 @@ export const CardContainer = styled.section`
     gap: 1rem;
     width: 100%;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-    border-radius: 0.3rem;
-    background-color: #7f8c8d;
+    border-radius: 1rem;
+    background-color: #66B2FF;
     margin-top: 0.5rem;
-    color: #2c3e50;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        box-shadow: #BFFF00 0px 0px 0px 2px, #BFFF00 0px 4px 6px -1px, #BFFF00 0px 1px 0px inset;
+    }
 `;
 
 export const CardBody = styled.article`
@@ -24,23 +29,8 @@ export const CardBody = styled.article`
         justify-content: space-between;
         padding: 1rem;
         width: 100%;
-
-        div{
-            width: 50%;
-            flex-direction: row;
-
-            p{
-                cursor: pointer;
-
-                &:hover{
-                text-decoration: underline;
-                }
-            }
-        }
     }
 
-
-    
     h2{
         margin-bottom: 1rem;
     }
@@ -89,4 +79,12 @@ export const Section = styled.section`
             object-position: center;
             border-radius: 50%;
         }
+`;
+
+export const CommentResult = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    width: 80%;
 `;

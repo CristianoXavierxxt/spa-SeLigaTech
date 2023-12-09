@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const ButtonSpace = styled.button`
-    background-color: #006266;
+    background-color: #66B2FF;
     border: none;
     outline: none;
     font-size: 1rem;
     padding: 0.4rem 1rem;
-    color: #bdc3c7;
+    color: #ffffff;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
     border-radius: 0.3rem;
@@ -17,8 +17,8 @@ export const ButtonSpace = styled.button`
     margin: 0.2rem;
     
     &:hover {
-        background-color: #00b894;
+        background-color: #BFFF00;
         color: #2c3e50;
-        box-shadow: 0 0 35px #00b894;
+        box-shadow: 0 0 35px #BFFF00;
     }
 `;

@@ -49,6 +49,8 @@ export default function Home() {
                         image = {topPublication.avatar}
                         likes = {topPublication.likes }
                         comments = {topPublication.comments }
+                        username = {topPublication.username}
+                        date = {topPublication.date}
                     /> 
                 }
             </HomeHeader>   
@@ -64,6 +66,8 @@ export default function Home() {
                                 image = {item.avatar}
                                 likes = {item.likes}
                                 comments = {item.comments}
+                                username = {item.username}
+                                date = {item.date}
                             /> 
                         )
                     })

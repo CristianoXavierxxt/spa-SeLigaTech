@@ -75,6 +75,8 @@ export function Profile() {
                                     image = {item.avatar}
                                     likes = {item.likes}
                                     comments = {item.comments}
+                                    username = {item.username}
+                                    date = {item.date}
                                 />
                             )
                         } )

@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { findByIdPublication } from "../../services/publicationServices.js"
 import { CardPubliComment } from "../../components/CardPubliComment/CardPubliComment.jsx"
-import { ContainerResult, SearchPubli } from "../Comments/CommentsStyled.jsx"
+import { ContainerResult, SearchPubli, CreateComment } from "../Comments/CommentsStyled.jsx"
+import { Button } from "../../components/Button/Button.jsx"
 
 export function Comments() {
 
@@ -37,6 +38,8 @@ export function Comments() {
                         publication.avatar && 
                         publication.likes &&
                         publication.comments &&
+                        publication.username &&
+                        publication.date &&
                         (
                             <CardPubliComment 
                                 key = {publication.id}
@@ -46,6 +49,8 @@ export function Comments() {
                                 image = {publication.avatar}
                                 likes = {publication.likes}
                                 comments = {publication.comments}
+                                username = {publication.username}
+                                date = {publication.date}
                             /> 
                         )
                             
@@ -53,6 +58,15 @@ export function Comments() {
                 </SearchPubli>
 
             </ContainerResult>
+            <CreateComment>
+                    <form>
+                        <div>
+                            <textarea placeholder="Escreva aqui seu comentario" rows="6" cols="100">
+                            </textarea>
+                        </div>
+                        <Button type="submit" text="Responder"></Button>
+                    </form>
+            </CreateComment>
 
         </>
     )

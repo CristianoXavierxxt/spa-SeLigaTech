@@ -1,11 +1,17 @@
-import { CardContainer, CardBody, CardFooter, CardHeader, Section } from "../CardPubliComment/CardPubliCommentStyled.jsx"
+import { 
+    CardContainer, 
+    CardBody, CardFooter, 
+    CardHeader, 
+    Section, 
+    CommentResult
+} from "../CardPubliComment/CardPubliCommentStyled.jsx"
+
 import { useEffect, useState } from "react"
 import { findByIdPublication } from "../../services/publicationServices.js"
-import { addRemoveLike } from "../../services/publicationServices.js"
 import { TextLimit } from "../TextLimit/TextLimit.jsx"
 import { CardComment } from "../CardComment/CardComment.jsx"
 
-export function CardPubliComment( { id, title, text, image, likes, comments, top } ) {
+export function CardPubliComment( { id, title, text, image, likes, comments, top, username, date } ) {
     
     const [allComments, setAllComments] = useState([])
 
@@ -20,7 +26,7 @@ export function CardPubliComment( { id, title, text, image, likes, comments, top
     }
 
     useEffect( () =>{
-        if( id && title && text && image && likes && comments ){
+        if( id && title && text && image && likes && comments && username && date ){
             findPublicationId()
         }
     },[] )
@@ -31,6 +37,7 @@ export function CardPubliComment( { id, title, text, image, likes, comments, top
             <CardContainer>
 
                 <CardBody>
+
                     <div>
                         
 
@@ -57,37 +64,37 @@ export function CardPubliComment( { id, title, text, image, likes, comments, top
 
                     <Section>
                         <img src={image} alt="imagem" />
-                        <p>username</p>
-                        <p>Data</p>
+                        <p>{username}</p>
+                        <p>{date}</p>
 
                     </Section>
 
                 </CardBody>
 
-
-                <div>
-
-                    {
-                        allComments.length > 0 && 
-                        (
-                            allComments.map((item) => {
-                                return (
-                                    <CardComment
-                                        key={item.idComment}
-                                        idComemnt={item.idComemnt}
-                                        userId={item.userId}
-                                        commentBody={item.commentBody}
-                                        createdAt={item.createdAt}
-                                    />
-                                )
-                            })
-                        )
-                        
-                    }
-
-                </div>
-
             </CardContainer>
+
+            <CommentResult>
+
+                {
+                    allComments.length > 0 && 
+                    (
+                        allComments.map((item) => {
+                            return (
+                                <CardComment
+                                    key={item.idComment}
+                                    idPublication = {id}
+                                    idComemnt={item.idComemnt}
+                                    userId={item.userId}
+                                    commentBody={item.commentBody}
+                                    createdAt={item.createdAt}
+                                />
+                            )
+                        })
+                    )
+                        
+                }
+
+            </CommentResult>
         </>
     )
 }

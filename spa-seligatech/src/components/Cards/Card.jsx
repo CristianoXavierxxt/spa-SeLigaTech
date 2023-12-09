@@ -2,11 +2,16 @@ import { useEffect, useState } from "react"
 import { addRemoveLike } from "../../services/publicationServices.js"
 import { CardContainer, CardBody, CardFooter, CardHeader, Section } from "../Cards/CardStyled.jsx"
 import { TextLimit } from "../TextLimit/TextLimit.jsx"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
-export default function Card( { id, title, text, image, likes, comments, top } ) {
+export default function Card( { id, title, text, image, likes, comments, username, date, top } ) {
 
     const [reloadPage, setReloadPage] = useState(false);
+    const navigate = useNavigate()
+
+    function onReply() {
+        navigate(`/comment/${id}`)
+    }
 
     async function addLike(){
         try {
@@ -55,18 +60,19 @@ export default function Card( { id, title, text, image, likes, comments, top } )
 
                         <div>
                             <p onClick={handleLikeClick}>Like</p>
-                            <Link to={`/comment/${id}`}>
-                                <p>Responder</p>
-                            </Link>
+                            
+                            <p onClick={onReply}>Responder</p>
+                            
                             
                         </div>
                     
                     </div>
 
                     <Section>
+                        
                         <img src={image} alt="imagem" />
-                        <p>username</p>
-                        <p>Data</p>
+                        <p>{username}</p>
+                        <p>{date}</p>
 
                     </Section>
 
