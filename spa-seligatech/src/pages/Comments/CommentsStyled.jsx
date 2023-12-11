@@ -38,14 +38,15 @@ export const CreateComment = styled.div`
         outline: none;
         border: none;
         border-radius: 0.3rem;
-        background-color: #E0E0E0;
+        background-color: #222222;
+        color: #ffffff;
 
         &::placeholder{
-            color: #2c3e50;
+            color: #ffffff;
         }
 
         &:focus{
-            border: 2px solid #BFFF00;
+            border: #007FFF 0.175em solid;
         }
 
     }

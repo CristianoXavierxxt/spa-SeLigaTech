@@ -8,17 +8,15 @@ export const ContainerResults = styled.section`
     align-items: center;
 
     img{
-        width: 15%;
+        width: 50%;
     }
 `;
 
 export const SearchPubli = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0 auto;
-    width: 80%;
-    align-items: center;  
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    grid-gap: 1rem;
+    margin: 0 auto; 
 `;
 
 export const TextResult = styled.div`

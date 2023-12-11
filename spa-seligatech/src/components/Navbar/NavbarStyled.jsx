@@ -6,7 +6,7 @@ export const Nav = styled.nav`
     align-items: center;
     max-width: 100%;
     padding: 1rem;
-    background-color: #007FFF;
+    background: linear-gradient(90deg, #00478d, #001F3F, #001F3F, #00478d);
     z-index: 1;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -39,8 +39,8 @@ export const InputSpace = styled.div`
         transition: 0.5s;
 
         &:hover{
-            background-color: #BFFF00;
-            color: #2c3e50;
+            background-color: #007FFF;
+            box-shadow: inset 0 0 0.5em #007FFF, 0 0 0.5em #007FFF
         }
     }
 
@@ -48,19 +48,19 @@ export const InputSpace = styled.div`
         outline: none;
         font-size: 1rem;
         padding: 0.6rem;
-        background-color: #E0E0E0;
-        border: 2px solid #66B2FF;
+        background-color: #222222;
+        border: 2px solid #007FFF;
         width: 100%;
         border-radius: 0.3rem;
-        color: #2c3e50;
+        color: #ffffff;
 
         &:focus{
-            border: 2px solid #BFFF00;
-            box-shadow: 0 0 35px #00b894;
+            border: #007FFF 0.125em solid;
+            box-shadow: inset 0 0 0.5em #007FFF, 0 0 0.5em #007FFF;
         }
 
         &::placeholder {
-            color: #2c3e50;
+            color: #ffffff;
         }
     }
 `;
@@ -84,23 +84,23 @@ export const UserLoggedSpace = styled.div`
 
     h2{
         font-size: 1.1rem;
-        color: #FFFFFF;
+        color: #66B2FF;
         transition: all 0.3s;
         cursor: pointer;
     }
 
     h2:hover{
-        color: #BFFF00;
+        text-shadow: 0 0 0.20em #fff7, 0 0 0.30em #007FFF;
     }
 
     i{
         font-size: 1.5rem;
-        color: #FFFFFF;
+        color: #66B2FF;
         cursor: pointer;
     }
 
     i:hover{
-        color: #BFFF00;
+        text-shadow: 0 0 0.20em #fff7, 0 0 0.30em #007FFF;
     }
 `;
 

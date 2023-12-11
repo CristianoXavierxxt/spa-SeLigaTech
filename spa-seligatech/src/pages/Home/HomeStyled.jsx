@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const HomeBody = styled.section`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    grid-gap: 1rem;
     margin: 0 auto;
-    width: 70%;
-    align-items: center;
+    width: 90%;
 `;
 
 export const HomeHeader = styled.section`

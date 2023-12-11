@@ -24,12 +24,22 @@ export const Section = styled.section`
     height: 400px;
     padding: 2rem;
     gap: 1rem;
-    background-color: blue;
+    background: linear-gradient(180deg, rgba(0, 71, 141, 0.9), rgba(0, 31, 63, 0.9),  rgba(0, 31, 63, 0.9), rgba(0, 71, 141, 0.9) );
     color: white;
+    border-radius: 1rem;
 
     h2{
         font-size: 2rem;
         text-align: center;
         font-weight: 700;
+    }
+
+
+    form{
+        align-items: center;
+    }
+
+    button {
+        width: 40%;
     }
 `;

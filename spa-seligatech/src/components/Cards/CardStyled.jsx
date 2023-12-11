@@ -5,15 +5,15 @@ export const CardContainer = styled.section`
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    box-shadow: inset #66B2FF 0px 0px 0px 2px, #66B2FF 0px 1px 0px;
     border-radius: 1rem;
-    background-color: #66B2FF;
+    background-color: rgba(68, 68, 68, 0.5);
     margin-top: 0.5rem;
     color: #ffffff;
     transition: all 0.2s ease-in-out;
 
     &:hover{
-        box-shadow: #BFFF00 0px 0px 0px 2px, #BFFF00 0px 4px 6px -1px, #BFFF00 0px 1px 0px inset;
+        box-shadow: inset 0 0 0.5em #007FFF, 0 0 0.5em #007FFF;
     }
 `;
 
@@ -36,8 +36,9 @@ export const CardBody = styled.article`
             p{
                 cursor: pointer;
                 &:hover{
+                    color: #66B2FF;
                     text-decoration: underline;
-                    color: #BFFF00;
+                    text-shadow: 0 0 0.20em #fff7, 0 0 0.30em #007FFF;
                 }
             }
         }
@@ -83,12 +84,12 @@ export const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
+    width: 50%;
     border-left: solid 1px;
 
     img {
-            height: 60%;
-            width: 70%;
+            height: 50%;
+            width: 60%;
             object-fit: cover;
             object-position: center;
             border-radius: 50%;
