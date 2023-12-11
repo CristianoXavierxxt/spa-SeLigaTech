@@ -6,7 +6,7 @@ export const GlobaStyled = createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
-        font-family: Newsreader, Arial;
+        font-family: Newsreader, sans-serif;
     }
 
     html{
@@ -16,8 +16,11 @@ export const GlobaStyled = createGlobalStyle`
     body{
         max-width: 100vw;
         height: 100vh;
-        background: linear-gradient(180deg,#000000, #222222, #222222, #000000);
+        background: linear-gradient(45deg, #00478d, #001F3F, #001F3F, #00478d);
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
         background-attachment: fixed;
-        font-family: "Balsamiq Sans";
+        
+        font-family: 'Balsamiq sans', sans-serif;
     }
 `

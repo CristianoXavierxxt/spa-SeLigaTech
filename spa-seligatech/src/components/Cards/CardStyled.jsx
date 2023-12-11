@@ -5,16 +5,15 @@ export const CardContainer = styled.section`
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    box-shadow: inset #66B2FF 0px 0px 0px 2px, #66B2FF 0px 1px 0px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.062) );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
-    background-color: rgba(68, 68, 68, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     margin-top: 0.5rem;
     color: #ffffff;
-    transition: all 0.2s ease-in-out;
-
-    &:hover{
-        box-shadow: inset 0 0 0.5em #007FFF, 0 0 0.5em #007FFF;
-    }
+    
 `;
 
 export const CardBody = styled.article`
