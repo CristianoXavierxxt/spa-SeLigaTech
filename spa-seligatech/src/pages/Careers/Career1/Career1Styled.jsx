@@ -11,7 +11,7 @@ export const RoadmapHeader = styled.header`
 export const RoadmapContainer = styled.main`
     position: relative; 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 90%;
     height: 50vh;
@@ -21,38 +21,52 @@ export const RoadmapContainer = styled.main`
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.062) );
     border-radius: 2rem;
 
-    i{
-        border-radius: 50%;
-        padding: 0.5rem;
-        background-color: #66B2FF;
-    }
-
 `;
 
 
 export const ContainerIcon = styled.div`
+    font-size: 1rem;
     display: flex;
-    padding: 0.4rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     border-radius: 50%;
-    background: ${({ isActive }) => (isActive ? 
-            "linear-gradient(to right, #007FFF, #007FFF, #ffffff, #ffffff)" 
-                : 
-            "#ffffff"
-        )
-    };
-    background-size: 300%;
-    background-position: ${({ isActive }) => (isActive ? "left" : "right")};
-    box-shadow: ${({ isActive }) => (isActive ? 
-            "inset 0 0 0.5em #007FFF, 0 0 0.5em #007FFF" 
-                : 
-            "#ffffff")};
     position: relative;
-    transition: background 0.6s ease;
+
+    i{
+        font-size: 2rem;
+        box-sizing: border-box;
+        color: ${({ isActive }) => (isActive ? "#66B2FF" : "#ffffff")};
+        border-radius: 50%;
+        padding: 1rem;
+        background-color: #66B2FF;
+        background: ${({ isActive }) => (isActive ? 
+                "radial-gradient(#ffffff 55%, #007FFF 45%)" 
+                    : 
+                "radial-gradient(#66B2FF 55%, #ffffff 45%)"
+            )
+        };
+        box-shadow: ${({ isActive }) => (isActive ? 
+                "inset 0 0 0.5em #007FFF, 0 0 0.5em #007FFF" 
+                    : 
+                "#ffffff"
+            )
+        };
+
+    }
 
     &:not(:last-child)::after {
         content: "";
         position: absolute;
-        width: 14.7rem;
+        margin: 0;
+        padding: 0;
+        width: 12rem;
         height: 5px;
         background: ${({ isActive }) => (isActive ? 
                 "linear-gradient(to right, #007FFF, #007FFF, #ffffff, #ffffff)" 
@@ -66,9 +80,9 @@ export const ContainerIcon = styled.div`
             "0 0 0.5em #007FFF, 0 0 0.5em #007FFF" 
                 : 
             "#ffffff")};
-        top: 50%;
-        left: 100%;
+        top: 55%;
+        left: 95%;
         transform: translateY(-50%);
-        transition: background 2s ease
+        transition: background 1.5s ease
     }
 `;

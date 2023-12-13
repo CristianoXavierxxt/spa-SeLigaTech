@@ -28,23 +28,33 @@ export default function Career1() {
 
             <RoadmapContainer>
 
+                
+                
+                
+                    
                 <ContainerIcon onClick={() => handleClick("rocket")} isActive={iconStates.rocket}>
+                    <p>Vamos <br></br>começar</p>
                     <i className="bi bi-rocket-takeoff"></i>
                 </ContainerIcon>
-
+                
+                
                 <ContainerIcon onClick={() => handleClick("check1")} isActive={iconStates.check1}>
+                    <p>Primeiro<br></br> passo</p>
                     <i className="bi bi-check-circle"></i>
                 </ContainerIcon>
 
                 <ContainerIcon onClick={() => handleClick("check2")} isActive={iconStates.check2}>
+                    <p>Segundo<br></br> passo</p>
                     <i className="bi bi-check-circle"></i>
                 </ContainerIcon>
 
                 <ContainerIcon onClick={() => handleClick("check3")} isActive={iconStates.check3}>
+                    <p>terceiro<br></br> passo</p>
                     <i className="bi bi-check-circle"></i>
                 </ContainerIcon>
 
                 <ContainerIcon onClick={() => handleClick("stars")} isActive={iconStates.stars}>
+                    <p>Boa<br></br>campeão</p>
                     <i className="bi bi-stars"></i>
                 </ContainerIcon>
 
